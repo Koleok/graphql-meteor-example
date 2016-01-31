@@ -1,0 +1,21 @@
+{
+  "name": "graphql-example",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "meteor -p 3003",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "faker2": "^0.5.0",
+    "graphiql": "^0.4.5",
+    "graphql": "^0.4.14",
+    "lodash": "^4.1.0",
+    "react": "^0.14.6",
+    "react-dom": "^0.14.6"
+  }
+}
