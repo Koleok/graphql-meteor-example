@@ -15,18 +15,13 @@ export default ({
   // faker library
   const {
     Company: {
-      catchPhrase
-    },
-    Helpers: {
-      randomNumber
+      catchPhrase,
+      bs
     },
     Name: {
       findName
     },
-    Lorem: {
-      paragraph,
-      sentence
-    }
+    Lorem
   } = faker;
 
   // // Bootstrap with some dummy data
@@ -41,27 +36,27 @@ export default ({
       _id: '2',
       name: findName()
     });
+  }
 
+  if (!posts.findOne()) {
     _.times(4, index => {
-      const postId = randomNumber(),
-        commentId = randomNumber();
 
-      posts.insert({
-        _id: postId,
+      const postId = posts.insert({
         title: catchPhrase(),
-        content: paragraph(),
+        content: Lorem.paragraph(),
         author: '1'
       });
 
+      console.log(postId);
+
       comments.insert({
-        _id: commentId,
-        text: sentence(),
+        text: bs(),
         postId,
         author: '2'
       });
     });
   }
 
-  return (authors.findOne() && posts.findOne() && comments.findOne());
-
-}
+  // True if there is at least one document in each collection
+  return (!!authors.find() && !!posts.findOne() && !!comments.findOne())
+};

@@ -1,6 +1,7 @@
 /***************************************************
  * Package dependencies for ioc container          *
  ***************************************************/
+import graphql from 'graphql';
 import faker from 'faker2';
 import _ from 'lodash';
 
@@ -9,6 +10,7 @@ import _ from 'lodash';
  * module can pluck the component it requires      *
  ***************************************************/
 export default {
+  graphql,
   Mongo,
   faker,
   _,

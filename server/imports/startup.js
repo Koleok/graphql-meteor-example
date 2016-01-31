@@ -1,12 +1,19 @@
-import deps, {
-  faker,
-  _
-}
-from './ioc';
-import buildCollections from './collections';
-import seeder from './seed';
+import deps from './ioc';
 
-const collections = buildCollections(deps),
+import collectionsBuilder from './mongo/collections';
+import seeder from './mongo/seed';
+
+import schemaBuilder from './graphql/schema';
+import typebuilder from './graphql/types/types';
+
+console.log(deps);
+
+const collections = collectionsBuilder(deps),
   dataReady = seeder(collections, deps);
 
-console.log(dataReady);
+const types = typebuilder(collections, deps),
+  schema = schemaBuilder(collections, deps, types);
+
+if (dataReady) {
+
+}
