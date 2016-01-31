@@ -8,8 +8,11 @@ binary-heap@1.0.5-modules.4
 blaze@2.1.4-modules.4
 blaze-tools@1.0.5-modules.4
 boilerplate-generator@1.0.5-modules.4
+caching-compiler@1.0.1-modules.4
 callback-hook@1.0.5-modules.4
 check@1.1.1-modules.4
+coffeescript@1.0.12-modules.4
+cosmos:browserify@0.9.3
 ddp@1.2.2
 ddp-client@1.2.2-modules.4
 ddp-common@1.2.2
@@ -29,6 +32,9 @@ http@1.1.2-modules.4
 id-map@1.0.4
 insecure@1.0.4
 jquery@1.11.5-modules.4
+jsx@0.2.4
+kadira:graphql@1.2.4
+kadira:runtime-dev@0.0.1
 launch-screen@1.0.5-modules.4
 livedata@1.0.15
 logging@1.0.9-modules.4
@@ -36,6 +42,7 @@ meteor@1.1.11-modules.4
 meteor-base@1.0.1
 meteor-env-dev@0.0.1-modules.4
 meteor-env-prod@0.0.1-modules.4
+meteorhacks:picker@1.0.3
 minifiers-css@1.1.8-modules.4
 minifiers-js@1.1.8-modules.4
 minimongo@1.0.11-modules.4
@@ -49,6 +56,11 @@ observe-sequence@1.0.8-modules.4
 ordered-dict@1.0.4
 promise@0.5.2-modules.4
 random@1.0.6-modules.4
+react@0.14.3_1
+react-meteor-data@0.2.5
+react-runtime@0.14.4
+react-runtime-dev@0.14.4
+react-runtime-prod@0.14.4
 reactive-var@1.0.6
 reload@1.1.5-modules.4
 retry@1.0.4

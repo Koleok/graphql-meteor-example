@@ -1,7 +1,7 @@
 export default ({
 
   // Deps
-  graphql: {
+  GraphQL: {
     types: {
       GraphQLObjectType,
       GraphQLString,

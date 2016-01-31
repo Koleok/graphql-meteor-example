@@ -7,7 +7,7 @@ export default ({
 }, {
 
   // Deps
-  graphql: {
+  GraphQL: {
     types: {
       GraphQLSchema,
       GraphQLObjectType,

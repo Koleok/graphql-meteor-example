@@ -6,8 +6,6 @@ import seeder from './mongo/seed';
 import schemaBuilder from './graphql/schema';
 import typebuilder from './graphql/types/types';
 
-console.log(deps);
-
 const collections = collectionsBuilder(deps),
   dataReady = seeder(collections, deps);
 
