@@ -1,5 +1,5 @@
 sequelize-auto \
---output=. \
+--output=./server/imports/sql/models \
 --database=reviews \
 --host=dockerhost \
 --port=3306 \

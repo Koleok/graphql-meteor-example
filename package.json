@@ -5,7 +5,10 @@
   "main": "index.js",
   "scripts": {
     "start": "meteor -p 3003",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "npm run pre-build-db && npm run build-db",
+    "pre-build-db": "chmod +x ./server/imports/sql/build_sequelize.sh",
+    "build-db": "./server/imports/sql/build_sequelize.sh"
   },
   "keywords": [],
   "author": "",
