@@ -1,0 +1,14 @@
+reviews_test_data:
+  image: mysql
+  volumes:
+    - ./docker/data/reviews1-31-16.sql:/docker-entrypoint-initdb.d/reviews1-31-16.sql
+
+mysql_crosschx_global:
+  image: mysql
+  volumes_from:
+    - reviews_test_data
+  ports:
+    - "3306:3306"
+  environment:
+    - MYSQL_ROOT_PASSWORD=password
+    - MYSQL_DATABASE=reviews
