@@ -19,10 +19,17 @@ export default ({
         primaryKey: true,
         autoIncrement: true
       },
+
       text: {
         type: TEXT,
         allowNull: false
       },
+
+      post_id: {
+        type: VARCHAR(30),
+        allowNull: false
+      },
+
       reviewer_id: {
         type: INTEGER(11),
         allowNull: false,
@@ -31,6 +38,7 @@ export default ({
           key: 'id'
         }
       }
+
     }, {
       tableName: 'unbiased_reviews',
       freezeTableName: true

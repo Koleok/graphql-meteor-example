@@ -31,10 +31,9 @@ export default ({
       resolve: review => review.text
     },
 
-    reviewerId: {
-      type: new GraphQLNonNull(GraphQLInt),
-      description: 'id of author',
-      resolve: review => review.reviewer_id
+    post: {
+      type: new GraphQLNonNull(GraphQLString),
+      description: 'id of the post this review refers to'
     },
 
     reviewer: {
