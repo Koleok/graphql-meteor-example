@@ -1,7 +1,7 @@
 reviews_test_data:
   image: mysql
   volumes:
-    - ./docker/data/reviews1-31-16.sql:/docker-entrypoint-initdb.d/reviews1-31-16.sql
+    - ./docker/data/reviews.sql:/docker-entrypoint-initdb.d/reviews.sql
 
 mysql_crosschx_global:
   image: mysql

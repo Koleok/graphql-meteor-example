@@ -1,4 +1,16 @@
 /***************************************************
+ * Meteor dependencies                             *
+ ***************************************************/
+import {
+  Meteor
+}
+from 'meteor/meteor';
+import {
+  DDP
+}
+from 'meteor/ddp';
+
+/***************************************************
  * Package dependencies for ioc container          *
  ***************************************************/
 import _ from 'lodash';
@@ -12,7 +24,9 @@ import sequelize from 'sequelize';
 export default {
   sequelize,
   GraphQL,
+  Meteor,
   Mongo,
   faker,
+  DDP,
   _,
 };

@@ -18,7 +18,7 @@ const mongoCollections = collectionsBuilder(deps),
   }),
 
   mongoTypes = mongoTypeBuilder({
-    mongoCollections,
+    collections: mongoCollections,
     deps
   });
 

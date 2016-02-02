@@ -18,7 +18,7 @@ export default ({
   // Mongo GraphQL Types
   Author,
   Comment,
-  BlogPost
+  BlogPost,
 
   // Deps
   GraphQL: {
