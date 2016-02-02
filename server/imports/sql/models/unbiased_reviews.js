@@ -3,6 +3,7 @@ export default ({
   // Sequelize Types
   sequelize: {
     INTEGER,
+    STRING,
     TEXT
   },
 
@@ -26,7 +27,7 @@ export default ({
       },
 
       post_id: {
-        type: VARCHAR(30),
+        type: STRING,
         allowNull: false
       },
 
