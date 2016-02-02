@@ -1,22 +1,36 @@
-export default (sequelize, DataTypes) =>
-sequelize.define('reviewers', {
-  id: {
-    type: DataTypes.INTEGER(11),
-    allowNull: false,
-    primaryKey: true,
-    autoIncrement: true
+export default ({
+
+  // Sequelize Types
+  sequelize: {
+    INTEGER,
+    STRING
   },
-  first_name: {
-    type: DataTypes.STRING,
-    allowNull: false,
-    defaultValue: ''
-  },
-  last_name: {
-    type: DataTypes.STRING,
-    allowNull: false,
-    defaultValue: ''
-  }
-}, {
-  tableName: 'reviewers',
-  freezeTableName: true
-});
+
+  // Db connection
+  connection
+
+}) => {
+
+  return connection.define(
+    'reviewers', {
+      id: {
+        type: INTEGER(11),
+        allowNull: false,
+        primaryKey: true,
+        autoIncrement: true
+      },
+      first_name: {
+        type: STRING,
+        allowNull: false,
+        defaultValue: ''
+      },
+      last_name: {
+        type: STRING,
+        allowNull: false,
+        defaultValue: ''
+      }
+    }, {
+      tableName: 'reviewers',
+      freezeTableName: true
+    });
+}

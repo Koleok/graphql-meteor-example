@@ -1,4 +1,4 @@
-sequelize-auto \
+./node_modules/sequelize-auto/bin/sequelize-auto \
 --output=./server/imports/sql/models \
 --database=reviews \
 --host=dockerhost \

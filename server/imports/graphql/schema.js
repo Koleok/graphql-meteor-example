@@ -3,8 +3,22 @@ export default ({
   // Collections
   comments,
   authors,
-  posts
-}, {
+  posts,
+
+  // Sql Models
+  reviewers,
+  hatefulReviews,
+  unbiasedReviews,
+
+  // Sql GraphQL Types
+  Reviewer,
+  HatefulReview,
+  UnbiasedReview,
+
+  // Mongo GraphQL Types
+  Author,
+  Comment,
+  BlogPost
 
   // Deps
   GraphQL: {
@@ -16,12 +30,6 @@ export default ({
       GraphQLNonNull
     }
   }
-}, {
-
-  // User Types
-  Author,
-  Comment,
-  BlogPost
 }) => {
 
   const query = new GraphQLObjectType({

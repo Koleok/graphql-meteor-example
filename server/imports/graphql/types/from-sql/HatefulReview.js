@@ -1,40 +1,46 @@
-import getEntityResolver from '../util/entity-resolver';
-import {
-  getType, registerType
-}
-from '../resolve-map';
-import {
-  GraphQLObjectType, GraphQLInt, GraphQLNonNull, GraphQLString
-}
-from 'graphql';
+export default ({
 
-const HatefulReviewType = new GraphQLObjectType({
+  // Deps
+  GraphQL: {
+    types: {
+      GraphQLObjectType,
+      GraphQLNonNull,
+      GraphQLString,
+      GraphQLInt
+    }
+  }
+}, {
+
+  // GraphQL Types
+  Reviewer
+
+}) => new GraphQLObjectType({
   name: 'HatefulReview',
-  description: '@TODO DESCRIBE ME',
+  description: 'reviews that are just mean, for no reason',
 
   fields: () => ({
     id: {
       type: new GraphQLNonNull(GraphQLInt),
-      description: '@TODO DESCRIBE ME'
+      description: 'unique identifier',
+      resolve: review => review.id
     },
 
     text: {
       type: new GraphQLNonNull(GraphQLString),
-      description: '@TODO DESCRIBE ME'
+      description: 'the body of the review',
+      resolve: review => review.text
     },
 
     reviewerId: {
       type: new GraphQLNonNull(GraphQLInt),
-      description: '@TODO DESCRIBE ME'
+      description: 'id of author',
+      resolve: review => review.reviewer_id
     },
 
     reviewer: {
-      type: getType('Reviewer'),
-      description: '@TODO DESCRIBE ME (reference)',
-      resolve: getEntityResolver('Reviewer')
+      type: Reviewer,
+      description: 'author object',
+      resolve: review => review.getReviewer()
     }
   })
 });
-
-registerType(HatefulReviewType);
-export default HatefulReviewType;

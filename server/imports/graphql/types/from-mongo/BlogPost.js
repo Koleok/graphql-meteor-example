@@ -15,7 +15,7 @@ export default ({
   comments
 }, {
 
-  // User Types
+  // GraphQL Types
   Author,
   Comment
 }) => {

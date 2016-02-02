@@ -13,7 +13,7 @@ export default ({
   authors
 }, {
 
-  // User Types
+  // GraphQL Types
   Author
 }) => {
 

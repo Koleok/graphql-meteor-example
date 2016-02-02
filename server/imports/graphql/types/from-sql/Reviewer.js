@@ -1,34 +1,35 @@
-import getEntityResolver from '../util/entity-resolver';
-import {
-  getType, registerType
-}
-from '../resolve-map';
-import {
-  GraphQLObjectType, GraphQLInt, GraphQLNonNull, GraphQLString
-}
-from 'graphql';
+export default ({
 
-const ReviewerType = new GraphQLObjectType({
+  // Deps
+  GraphQL: {
+    types: {
+      GraphQLObjectType,
+      GraphQLNonNull,
+      GraphQLString,
+      GraphQLInt
+    }
+  }
+}) => new GraphQLObjectType({
   name: 'Reviewer',
-  description: '@TODO DESCRIBE ME',
+  description: 'An author who writes reviews',
 
   fields: () => ({
     id: {
       type: new GraphQLNonNull(GraphQLInt),
-      description: '@TODO DESCRIBE ME'
+      description: 'unique identifier',
+      resolve: reviewer => reviewer.id
     },
 
     firstName: {
       type: new GraphQLNonNull(GraphQLString),
-      description: '@TODO DESCRIBE ME'
+      description: 'first name of reviewer',
+      resolve: reviewer => reviewer.first_name
     },
 
     lastName: {
       type: new GraphQLNonNull(GraphQLString),
-      description: '@TODO DESCRIBE ME'
+      description: 'last name of reviewer',
+      resolve: reviewer => reviewer.last_name
     }
   })
 });
-
-registerType(ReviewerType);
-export default ReviewerType;

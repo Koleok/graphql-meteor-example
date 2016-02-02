@@ -2,14 +2,14 @@ import ReviewerFactory from './Reviewer';
 import HatefulReviewFactory from './HatefulReview';
 import UnbiasedReviewFactory from './UnbiasedReview';
 
-export default (collections, deps) => {
+export default deps => {
   const Reviewer = ReviewerFactory(deps),
 
-    HatefulReview = HatefulReviewFactory(deps, collections, {
+    HatefulReview = HatefulReviewFactory(deps, {
       Reviewer
     }),
 
-    UnbiasedReview = UnbiasedReviewFactory(deps, collections, {
+    UnbiasedReview = UnbiasedReviewFactory(deps, {
       Reviewer
     });
 

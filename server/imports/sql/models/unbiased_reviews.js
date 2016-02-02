@@ -1,24 +1,39 @@
-export default (sequelize, DataTypes) =>
-sequelize.define('unbiased_reviews', {
-  id: {
-    type: DataTypes.INTEGER(11),
-    allowNull: false,
-    primaryKey: true,
-    autoIncrement: true
+export default ({
+
+  // Sequelize Types
+  sequelize: {
+    INTEGER,
+    TEXT
   },
-  text: {
-    type: DataTypes.TEXT,
-    allowNull: false
-  },
-  reviewer_id: {
-    type: DataTypes.INTEGER(11),
-    allowNull: false,
-    references: {
-      model: 'reviewers',
-      key: 'id'
-    }
-  }
-}, {
-  tableName: 'unbiased_reviews',
-  freezeTableName: true
-});
+
+  // Db connection
+  connection
+
+}) => {
+
+  return connection.define(
+    'unbiased_reviews', {
+      id: {
+        type: INTEGER(11),
+        allowNull: false,
+        primaryKey: true,
+        autoIncrement: true
+      },
+      text: {
+        type: TEXT,
+        allowNull: false
+      },
+      reviewer_id: {
+        type: INTEGER(11),
+        allowNull: false,
+        references: {
+          model: 'reviewers',
+          key: 'id'
+        }
+      }
+    }, {
+      tableName: 'unbiased_reviews',
+      freezeTableName: true
+    });
+
+}

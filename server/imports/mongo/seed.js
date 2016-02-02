@@ -1,14 +1,12 @@
 export default ({
+  // Deps
+  faker,
+  _,
 
   // Collections
   authors,
   comments,
   posts
-}, {
-
-  // Deps
-  faker,
-  _
 }) => {
 
   // Pull the functions we are going to use off of the
