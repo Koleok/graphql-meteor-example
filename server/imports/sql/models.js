@@ -25,10 +25,14 @@ export default ({
       connection
     });
 
-  reviewers.hasMany(hatefulReviews);
+  reviewers.hasMany(hatefulReviews, {
+    as: 'HatefulReviews'
+  });
   hatefulReviews.belongsTo(reviewers);
 
-  reviewers.hasMany(unbiasedReviews);
+  reviewers.hasMany(unbiasedReviews, {
+    as: 'UnbiasedReviews'
+  });
   unbiasedReviews.belongsTo(reviewers);
 
   return {

@@ -41,6 +41,8 @@ export default ({
       }
 
     }, {
+      timestamps: false,
+      underscored: true,
       tableName: 'hateful_reviews',
       freezeTableName: true
     });

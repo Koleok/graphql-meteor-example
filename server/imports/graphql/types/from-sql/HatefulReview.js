@@ -1,20 +1,12 @@
-export default ({
+import Reviewer from './Reviewer';
+const {
+  GraphQLObjectType,
+  GraphQLNonNull,
+  GraphQLString,
+  GraphQLInt
+} = GraphQL.types;
 
-  // Deps
-  GraphQL: {
-    types: {
-      GraphQLObjectType,
-      GraphQLNonNull,
-      GraphQLString,
-      GraphQLInt
-    }
-  }
-}, {
-
-  // GraphQL Types
-  Reviewer
-
-}) => new GraphQLObjectType({
+export default new GraphQLObjectType({
   name: 'HatefulReview',
   description: 'reviews that are just mean, for no reason',
 

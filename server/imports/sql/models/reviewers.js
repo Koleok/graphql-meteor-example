@@ -30,6 +30,8 @@ export default ({
         defaultValue: ''
       }
     }, {
+      timestamps: false,
+      underscored: true,
       tableName: 'reviewers',
       freezeTableName: true
     });

@@ -8,7 +8,14 @@ import mongoTypeBuilder from './graphql/types/from-mongo/types';
 
 import sqlConnectionBuilder from './sql/connection';
 import sqlModelBuilder from './sql/models';
-import sqlTypeBuilder from './graphql/types/from-sql/types';
+import sqlTypes from './graphql/types/from-sql/types';
+
+const sqlConnection = sqlConnectionBuilder(deps),
+
+  sqlModels = sqlModelBuilder({
+    connection: sqlConnection,
+    ...deps
+  });
 
 const mongoCollections = collectionsBuilder(deps),
 
@@ -18,18 +25,11 @@ const mongoCollections = collectionsBuilder(deps),
   }),
 
   mongoTypes = mongoTypeBuilder({
-    collections: mongoCollections,
+    mongoCollections,
+    sqlModels,
+    sqlTypes,
     deps
   });
-
-const sqlConnection = sqlConnectionBuilder(deps),
-
-  sqlModels = sqlModelBuilder({
-    connection: sqlConnection,
-    ...deps
-  }),
-
-  sqlTypes = sqlTypeBuilder(deps);
 
 const schema = schemaBuilder({
   ...deps,
@@ -38,6 +38,8 @@ const schema = schemaBuilder({
   ...mongoTypes,
   ...mongoCollections
 });
+
+deps.GraphQL.registerSchema('Blog', schema);
 
 if (dataReady) {
 

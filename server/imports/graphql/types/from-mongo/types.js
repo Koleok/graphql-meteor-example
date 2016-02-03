@@ -3,20 +3,28 @@ import CommentFactory from './Comment';
 import BlogPostFactory from './BlogPost';
 
 export default ({
-  collections,
+  mongoCollections,
+  sqlModels,
+  sqlTypes,
   deps
 }) => {
 
   const Author = AuthorFactory(deps),
 
-    Comment = CommentFactory(deps, collections, {
-      Author
-    }),
+    Comment = CommentFactory(
+      deps,
+      mongoCollections, {
+        Author
+      }),
 
-    BlogPost = BlogPostFactory(deps, collections, {
-      Author,
-      Comment
-    });
+    BlogPost = BlogPostFactory(
+      deps,
+      sqlModels,
+      sqlTypes,
+      mongoCollections, {
+        Author,
+        Comment
+      });
 
   return {
     Author,

@@ -38,16 +38,19 @@ export default ({
 
       recentPost: {
         type: BlogPost,
+        description: 'A post that was published in the last day',
         resolve: () => posts.findOne()
       },
 
       posts: {
         type: new GraphQLList(BlogPost),
+        description: 'An unfiltered list of all posts',
         resolve: () => posts.find().fetch()
       },
 
       post: {
         type: BlogPost,
+        description: 'A query that requires an id parameter to retrieve a single specific post',
         args: {
           _id: {
             type: new GraphQLNonNull(GraphQLString)

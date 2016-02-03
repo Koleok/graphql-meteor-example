@@ -41,6 +41,8 @@ export default ({
       }
 
     }, {
+      timestamps: false,
+      underscored: true,
       tableName: 'unbiased_reviews',
       freezeTableName: true
     });

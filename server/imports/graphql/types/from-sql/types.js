@@ -1,21 +1,11 @@
-import ReviewerFactory from './Reviewer';
-import HatefulReviewFactory from './HatefulReview';
-import UnbiasedReviewFactory from './UnbiasedReview';
+import Reviews from './Reviews';
+import Reviewer from './Reviewer';
+import HatefulReview from './HatefulReview';
+import UnbiasedReview from './UnbiasedReview';
 
-export default deps => {
-  const Reviewer = ReviewerFactory(deps),
-
-    HatefulReview = HatefulReviewFactory(deps, {
-      Reviewer
-    }),
-
-    UnbiasedReview = UnbiasedReviewFactory(deps, {
-      Reviewer
-    });
-
-  return {
-    Reviewer,
-    HatefulReview,
-    UnbiasedReview
-  }
+export default {
+  Reviews,
+  Reviewer,
+  HatefulReview,
+  UnbiasedReview,
 }
