@@ -40,7 +40,3 @@ const schema = schemaBuilder({
 });
 
 deps.GraphQL.registerSchema('Blog', schema);
-
-if (dataReady) {
-
-}
