@@ -29,7 +29,7 @@ If meteor is not already installed on the target system
 [Download the official Meteor installer](https://install.meteor.com/windows)
 
 ##Docker
-Install the [docker toolkit](https://docs.docker.com/engine/installation/mac/) and run `docker-compose up` from project the root. A docker container should be started with the appropriate data for running this application.
+Install the [docker toolkit](https://docs.docker.com/engine/installation/mac/) and run `docker-compose up` from project the root. A pair of docker containers should be started, these are to house the **data** and the **mysql server** for the sql side of this application. *(The mongo side uses meteor's built in instance and pulls its data from the cache included in this repo)*.
 
 If docker was not previously installed/utilized, the above steps will depend on the default *linux host for docker containers* being started, which can be accomplished with
 
