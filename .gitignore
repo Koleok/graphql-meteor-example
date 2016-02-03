@@ -27,7 +27,11 @@ build
 node_modules
 
 # Dependency directory
-.meteor/local
+.meteor/local/build*
+.meteor/local/bundler-cache
+.meteor/local/isopacks
+.meteor/local/plugin-cache
+.meteor/local/shell
 
 # Reference files
 sandbox
