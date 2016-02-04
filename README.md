@@ -88,4 +88,4 @@ npm start
 
 _Note: the start script is mapped in `package.json` to execute `meteor -p 3003`_
 
-Visit the [fancy graphiql UI](http://localhost:3003/graphql/ide?schema=Blog) and play around
+#Visit the [fancy graphiql UI](http://localhost:3003/graphql/ide?schema=Blog) and play around
